@@ -1,0 +1,3 @@
+I feel b was definitely doable with a bit of thinking about a full row / column being painted last.
+c is an issue tbh. First of all think in terms of the compartments not the letters of the string.
+Now for each compartment if the count of a letter cannot reach it, that letter will be its mex.

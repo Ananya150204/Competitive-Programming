@@ -1,0 +1,2 @@
+An easier way to check whether all elements of an array are equal :
+Sort it and check whether last equals first

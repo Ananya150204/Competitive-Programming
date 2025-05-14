@@ -72,35 +72,32 @@ bool isPrime(ll n) {
     return true;
 }
 void diwan(){
-    int n;
-    cin >> n;
-    int cnt2 = 0;
-    vector<int> arr(n);
-    for(int i = 0; i < n; i++){
-        cin >> arr[i];
-        if (arr[i] == 2){
-            cnt2 ++;
-        }
+   int n;
+   cin >> n;
+   vector<int> arr(n);
+   //unordered_map<int,int> mpp;
+   bool allSame = true;
+   for (int i = 0; i < n; i++){
+    cin >> arr[i];
+    //cout 
+    //mpp[arr[i]] ++;
+    if (i-1 >= 0 && arr[i] != arr[i-1]){
+        allSame = false;
     }
-    if (cnt2 == 0){
-        cout << 1 << endl;
-        return;
-    }
-    if ((cnt2 & 1) != 0){
-        cout << -1 << endl;
-    }
-    else {
-        cnt2 = cnt2/2;
-        for (int i = 0; i < n; i++){
-            if (arr[i] == 2){
-                cnt2 --;
-                if (cnt2 == 0){
-                    cout << i+1 << endl;
-                    return;
-                }
-            }
-        }
-    }
+   }
+   if (allSame){
+    cout << "No\n";
+    return;
+   }
+   cout << "Yes\n";
+   sort(arr.rbegin(),arr.rend());
+   int temp = arr[n-1];
+   arr[n-1] = arr[1];
+   arr[1] = temp; 
+   for (int i = 0; i < n; i++){
+    cout << arr[i] << " ";
+   }
+   cout << "\n";
 }
 int32_t main(){
     int t = 1;
